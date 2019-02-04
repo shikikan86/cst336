@@ -1,0 +1,43 @@
+#spring{
+    border-top-left-radius: 50px;
+}
+#fall{
+    border-bottom-left-radius: 50px;
+}
+#summer{
+    border-top-right-radius: 50px;
+}
+#winter{
+    border-bottom-right-radius: 50px;
+}
+
+.column{
+
+
+    padding: 5px;
+    
+
+
+}
+
+
+
+.row::after{
+
+    display:flex;
+    
+
+}
+
+#test{
+    color:yellow;
+    font-family: 'Pacifico', cursive;
+    font-size:4em;
+    margin-bottom: 0px;
+}
+
+body{
+    background-color: black;
+    color:white;
+}
+
