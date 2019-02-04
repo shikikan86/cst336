@@ -1,33 +1,21 @@
 <!DOCTYPE html>
 <html>
-<!--
 
-First Website
-and comment
-in html
-(comments can span multiple lines)
-
--->
-
-<!-- This is the head -->
-<!-- All styles and javascript go inside the head -->
     <head>
         <meta charset="utf-8"/>
         <title>CST 336 Homework 1</title>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Cookie|Fredoka+One|Indie+Flower|Righteous" rel="stylesheet">     
         
+        <!--I use style here to highlight the nav text of the page that is currently on-->
         <style>
-          hr{
-              height: 3px;
-              background-color: gold;
-              border: gold;
-          }
+        #home{
+            color:red;
+        }
         </style>
+    
     </head>
-<!-- closing head -->
 
-    <!-- This is the body -->
-    <!-- This is where we place the content of our website -->
     <body>
         <header>
             <h1>Programming Languages and their uses</h1>
@@ -35,21 +23,51 @@ in html
         
         <nav>
             
-          <hr width="75%" />
+          <hr width="85%" />
+          
+          <!----------------------------------------Links (Nav)-------------------------------------------->
 
-          <a href = "index.html"><strong>Home</strong></a>
-          <a href = "c++.html">C++</a>
-          <a href = "python.html">Python</a>
-          <a href = "java.html">Java</a>
+          <a id = "home"  href = "index.html"><strong><i>Home</i></strong></a>
+          
+          <a id="cFont" href = "c.html">C++</a>
+          
+          <a id="pythonFont" href = "python.html">Python</a>
+
+          <a id="javaFont" href = "java.html">Java</a>
+          
+          <!-----------------------------------------Links (Nav)------------------------------------------------>
+          
         </nav>
         
-        <br /><br />
-        
+
         <content>
-            <picture id="homePic">
-                <img src="img/homePic.jpg" alt="code1" width="400" />
-            </picture>
+            <figure id="Pic1">
+                <img src="img/homePic.jpg" alt="code1" style="width:350px;height:300px;"/>
+            </figure>
             
+            <text id="text1">
+                <br />
+                So what are programming langauges? Well, every line of code is read like an instruction for the computer to do something.<br />
+                Programming languages can be divided into the following categories:
+                <ul>
+                    <li>Interpreted Programming Languages</li>
+                    <li>Functional Programming Languages</li>
+                    <li>Compiled Programming Languages</li>
+                    <li>Procedural Programming Languages</li>
+                    <li>Scripted Programming Languages</li>
+                    <li>Markup Programming Languages</li>
+                    <li>Logic-based Programming Languages</li>
+                    <li>Concurrent Programming Languages</li>
+                    <li>Object-oriented Programming Languages</li>
+                </ul>
+               
+               Low vs. High level Programming: Low level languages are like machine code in that it is very specific and harder to understand. <br />
+               High level languages are generally simpler, and you can forget about some details that would otherwise need to be addressed in <br />
+               low/mid level langauges. Above you can find some examples of some popular programming languages used in many industries. <br />
+               <p> </p>
+            
+                
+            </text>
             
         </content>
         
@@ -61,12 +79,24 @@ in html
         <!-- This is the footer -->
         <!-- The footer goes inside the body but not always -->
         <footer>
-           
+            <hr width="85%">
+            CST 336. 2019&copy;Justin Schroeder - CST 336 Internet Programming<br />
+            <strong>Disclaimer:</strong> The information in this webpage is fictitious.<br />
+            It is used for academic purposes only. <br /><br />
+            <img src="img/csumb.png" width="100" />
+            <img src="img/buddy_verified.png" width="100" />
             
         </footer>
-        <!-- closing footer -->
+        
+         
         
     </body>
     <!-- closing body -->
 
 </html>
+
+<!--Sources
+https://medium.com/web-development-zone/a-complete-list-of-computer-programming-languages-1d8bc5a891f
+https://stackoverflow.com/questions/3468068/low-mid-high-level-language-whats-the-difference
+https://www.w3schools.com/html/html_formatting.asp
+>

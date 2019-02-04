@@ -3,13 +3,83 @@ body{
     color: gray;
 }
 
-header{
+
+
+header, footer{
     color: gold;
     text-align: center
 }
 
+header{
+    font-family: 'Fredoka One', cursive;
+}
+
 nav{
-    color: white;
+    text-align:center;
+}
+
+nav a{
+    padding:30px;
+    padding-bottom:4px;
+    font-size:2.0em;
+    text-decoration:none;
+    color:white;
     text-align: center;
 }
+
+nav a:hover{
+    color:red;
+}
+
+hr{
+    height: 5px;
+    background-color: gold;
+    border: gold;
+}
+
+#pythonFont{
+    font-family: 'Indie Flower', cursive;
+}
+
+#cFont{
+    font-family: 'Righteous', cursive;
+}
+
+#javaFont{
+    font-family: 'Cookie', cursive;
+    font-size: 2.6em;
+}
+
+footer{
+    font-size:.75em;
+    color:gold;
+    clear: left;
+}
+
+
+#Pic1, #text1{
+   float:left; 
+}
+
+
+#text1{
+    font-size:1.2em;
+    text-align:left;
+}
+
+#pyPic{
+    float:right;
+}
+
+#textPy{
+    text-align:left;
+    padding-left:150px;
+}
+
+#pythonFooter{
+    clear:right;
+}
+
+
+
 
