@@ -35,7 +35,9 @@ nav a:hover{
 hr{
     height: 5px;
     background-color: gold;
-    border: gold;
+    border: none;
+    margin-left: 7%;
+    margin-right: 7%;
 }
 
 #pythonFont{
@@ -74,14 +76,13 @@ footer{
 
 #pyPic{
     float:right;
-    padding-right: 60px;
+    padding-right: 70px;
     padding-bottom: 20px;
 }
 
 #textPy{
     text-align:left;
     padding-left:160px;
-    padding-top: 20px;
     font-size: 1.2em;
 }
 
