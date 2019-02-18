@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slot Machine</title>
+        <link rel = "stylesheet" href = "css/styles.css">
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </head>
+    <body id = "bananas">
+        <h1 id = "title">Slot Machine</h1>
+        
+        <!--<div id = "image1"></div>-->
+        
+        <button id="submitButton"> Play! </button>
+        
+        <div class = "container">
+            <div class = "row">
+                <div class = "col">
+                   <div id = "image1"></div> 
+    
+                </div>
+                
+                <div class = "col">
+                    <div id = "image2"></div>
+                </div>
+                
+                <div class = "col">
+                    <div id = "image3"></div>
+    
+                </div>
+            </div>
+        </div>
+        
+        <div id="win"></div>
+        <div id = "disp"></div>
+        <div id="twins"></div>
+        
+        <script>
+            /* global $ */
+            let imageArray = ["cherry", "grapes", "seven"];
+            let total = 0;
+            
+            $("#submitButton").on("click", function(){
+                let randomIndex = Math.floor(Math.random()*3);
+                let randomImage = imageArray[randomIndex];
+                
+                $("#image1").html("<img src = 'img/" + randomImage + ".png' />")
+                let im1 = randomImage;
+                randomIndex = Math.floor(Math.random()*3);
+                randomImage = imageArray[randomIndex];
+                $("#image2").html("<img src = 'img/" + randomImage + ".png' />")
+                let im2 = randomImage;
+                randomIndex = Math.floor(Math.random()*3);
+                randomImage = imageArray[randomIndex];
+                $("#image3").html("<img src = 'img/" + randomImage + ".png' />")
+                let im3 = randomImage;
+                
+                if(im1 == "seven" && im2 == "seven" && im3 == "seven"){
+                    $('#win').html("Winnings: $" + "500");
+                    total += 500;
+                    $('#twins').html("Total Winnings: $" + total);
+                    $("#disp").html("JACKPOT!!");
+                }
+                
+                else if(im1 == "cherry" && im2 == "cherry" && im3 == "cherry"){
+                    $('#win').html("Winnings: $" + "100");
+                    total += 100;
+                    $('#twins').html("Total Winnings: $" + total);
+                    $("#disp").html("You Win!");
+                }
+                
+                else if(im1 == "grapes" && im2 == "grapes" && im3 == "grapes"){
+                    $('#win').html("Winnings: $" + "300");
+                    total += 300;
+                    $('#twins').html("Winnings: $" + total);
+                    $("#disp").html("You Win!");
+                }
+                else{
+                    $('#win').html("Winnings: $" + "0");
+                    $('#twins').html("Total Winnings: $" + total);
+                    $("#disp").html("You lose! Try Again.");
+                }
+            });
+            
+            
+            
+        </script>
+
+    </body>
+</html>
