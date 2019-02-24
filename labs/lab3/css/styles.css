@@ -3,9 +3,13 @@ body{
     text-align: center;
 }
 
-#title{
-    background-color: #afafaf;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    margin-left: -20px;
+
+.correct{
+    color:green;
+    font-size: 18pt;
+}
+
+.incorrect{
+    color:red;
+    font-size: 18pt;
 }

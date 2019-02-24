@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homework 2</title>
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <link rel = "stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <h1 id = "title">A.A. Ron's Aircraft Rental</h1>
+        
+        <hr>
+        
+        
+        <div id = "text">
+        <h2>Please enter your age: <input id = "q1" type = "number"></h2>
+        
+        <h2>Please describe your vision</h2>
+        <input type = "radio" name = "q2" id = "sight" value = "Sight"><label for="sight">I have 20/20 vision</label>
+        <input type = "radio" name = "q2" id = "noSight" value = "No Sight"><label for="noSight">I'm completely blind</label>
+        
+        <h2>How many engines do you want on the aircraft?</h2>
+        <select id = "q3">
+            <option value = "">Select One</option>
+            <option>Single Engine</option>
+            <option>2 Engine</option>
+            <option>3 Engine</option>
+            <option>4 Engine</option>
+            <option>Unlimited Power</option>
+        </select>
+
+        
+        <h2>How would you like the aircraft to be powered?</h2>
+        <input type = "radio" name = "q4" id = "prop" value = "Propeller"><label for="prop">Propeller Engine</label>
+        <input type = "radio" name = "q4" id = "jet" value = "Jet"><label for="jet">Jet Engine</label>
+        
+        <h2>What type of aircraft do you want?</h2>
+        <select id = "q5">
+            <option value = "">Select One</option>
+            <option>Fighter</option>
+            <option>Cargo</option>
+            <option>Commercial</option>
+            <option>Private</option>
+        </select>
+        
+        <br><br>
+
+        <input type = "checkbox" id = "certify"><label for = "certify">Please check this box to confirm that you are certified to fly a plane of the above specifications (we'll just take your word for it)</label>
+        
+        <div id = "cmon"></div>
+        
+        <br>
+        
+        <button id = "submitButton"> Let's Fly! </button>
+        
+        <br><br>
+        
+        
+        <div id = "results"></div>
+        
+        <br>
+        
+        <div id = "notes"></div>
+        
+        <br>
+        
+        <span id = "picture1"></span>
+        <span id = "picture2"></span>
+        
+        <div id = "disclaimer"></div>
+        
+        </div>
+            
+        <script>
+            /* global $ */
+             
+             function isFormValid(){
+                 let isValid = true;
+                 
+                 if($("#q1").val() == ""){
+                     isValid = false;
+                     
+                 }
+                 
+                 if($("input[name=q2]:checked").val() == undefined){
+                     isValid = false;
+                 }
+                 
+                 if($("#q3").val() == ""){
+                     isValid = false;
+                 }
+                 
+                 if($("input[name=q4]:checked").val() == undefined){
+                     isValid = false;
+                 }
+                 
+                 
+                 
+                 
+                 return isValid;
+             }
+             
+             
+             $("#q3").on("change", function(){
+                 if($("#q3").val() == "Unlimited Power"){
+                  $("#results").html("Today you'll be going up in the: Flying Whale");
+                  $("#picture1").html("<img src = 'img/whale.jpg' alt = Your Plane width = 500 />");
+                  $("#notes").html("Please present your whaling permit before embarking the aircraft");
+                  $("#picture2").html("");     
+                 }
+             });
+             
+            
+            //When the Submit Button is clicked
+            
+            $("#submitButton").click(function(){
+                $("#results").html("");
+                $("#picture1").html("");
+                $("#picture2").html("");
+                $("#notes").html("");
+                $("#disclaimer").html("");
+                
+                
+              let q1_response = $("#q1").val();
+              let q2_response = $("input[name=q2]:checked").val(); //Sight or No Sight
+              let q3_response = $("#q3").val(); //same as what's written on the options
+              let q4_response = $("input[name=q4]:checked").val(); //Propeller or Jet
+              let q5_response = $("#q5").val(); //same as what's written on the options
+              let q6_response = document.getElementById("certify").checked; //true or false
+              
+              
+              
+              if(q6_response){
+                  $("#cmon").html("");
+              }
+              else{
+                  $("#cmon").html("Are you sure? No paperwork needed! Just go on and check the box. You know you want to!");
+                  return;
+              }
+              
+            // alert($("#q3").val());
+              
+              if(!isFormValid()){
+                 
+                  alert("Please answer every question before proceeding");
+                  return;
+              }
+              if(q1_response < 21){
+                  alert("You must be 21 or older to use our service. But remember, it's not like we actually check.");
+                  return;
+              }
+              
+             
+              //Single Engine Private Prop
+              if(q3_response == "Single Engine" && q4_response == "Propeller" && q5_response == "Private"){
+                  $("#results").html("Today you'll be going up in the: Cessna 172");
+                  $("#picture1").html("<img src = 'img/cessna172.jpg' alt = Your Plane width = 450 />");
+                  $("#picture2").html("<img src = 'img/cessna172c.jpg' alt = Your Plane's Cockpit width = 450 />");
+                  $("#notes").html("We all gotta start somewhere right? This cheap, flimsy- I mean agile and easy-to-learn plane is great for beginners!");
+                  
+              }
+              
+              //Single Engine Fighter Prop
+              if(q3_response == "Single Engine" && q4_response == "Propeller" && q5_response == "Fighter"){
+                  $("#results").html("Today you'll be going up in the: P-51 Mustang");
+                  $("#picture1").html("<img src = 'img/p51.JPG' alt = Your Plane width = 450 />");
+                  $("#picture2").html("<img src = 'img/p51c.jpg' alt = Your Plane's Cockpit width = 450 />");
+                  $("#notes").html("Soar through the skies like it's 1944! Note: may not be airworthy. Fly at own risk.");
+              }
+              
+              //Single Engine Cargo Prop
+              if(q3_response == "Single Engine" && q4_response == "Propeller" && q5_response == "Cargo"){
+                  $("#results").html("Today you'll be going up in the: Grumman AF-2S");
+                  $("#picture1").html("<img src = 'img/af2.jpg' alt = Your Plane width = 450 />");
+                  $("#picture2").html("<img src = 'img/af2c.jpg' alt = Your Plane's Cockpit width = 450 />");
+                  $("#notes").html("Although not a cargo plane, this is the biggest single engine prop we could find. It won't start, so we'll give you a 10% discount.");
+              }
+              
+              //Single Engine commercial prop
+              if(q3_response == "Single Engine" && q4_response == "Propeller" && q5_response == "Commercial"){
+                  $("#results").html("Today you'll be going up in the: TBM 930");
+                  $("#picture1").html("<img src = 'img/tbm930.jpg' alt = Your Plane width = 450 />");
+                  $("#picture2").html("<img src = 'img/tbm930c.jpg' alt = Your Plane's Cockpit width = 450 />");
+                  $("#notes").html("The fastest commercial turboprop available!");
+              }
+              
+              //twin engine prop fighter
+              if(q3_response == "2 Engine" && q4_response == "Propeller" && q5_response == "Fighter"){
+                  $("#results").html("Today you'll be going up in the: P-38 Lightning");
+                  $("#picture1").html("<img src = 'img/p38.jpg' alt = Your Plane width = 450 />");
+                  $("#picture2").html("<img src = 'img/p38c.jpg' alt = Your Plane's Cockpit width = 450 />");
+                  $("#notes").html("It's been restored 5 times, yet it still breaks down. Happy flying!");
+              }
+              
+              //twin engine cargo prop 
+              if(q3_response == "2 Engine" && q4_response == "Propeller" && q5_response == "Cargo"){
+                  $("#results").html("Today you'll be going up in the: C-27 Spartan");
+                  $("#picture1").html("<img src = 'img/c27.jpg' alt = Your Plane width = 450 />");
+                  $("#picture2").html("<img src = 'img/c27c.jpg' alt = Your Plane's Cockpit width = 450 />");
+                  $("#notes").html("How does it feel to fly a discount C-130?");
+              }
+              
+              //twin engine commercial prop
+              if(q3_response == "2 Engine" && q4_response == "Propeller" && q5_response == "Commercial"){
+                  $("#results").html("Today you'll be going up in the: Beechcraft King Air Model 100");
+                  $("#picture1").html("<img src = 'img/beechcraft.jpg' alt = Your Plane width = 450 />");
+                  $("#picture2").html("<img src = 'img/beechcraftc.jpg' alt = Your Plane's Cockpit width = 450 />");
+                  $("#notes").html("Just don't fly it to an island with a Spinosaurus on it like Jurassic Park 3");
+              }
+              
+              //twin engine private prop
+              if(q3_response == "2 Engine" && q4_response == "Propeller" && q5_response == "Private"){
+                  $("#results").html("Today you'll be going up in the: Beechcraft King Air Model 100");
+                  $("#picture1").html("<img src = 'img/beechcraft.jpg' alt = Your Plane width = 450 />");
+                  $("#picture2").html("<img src = 'img/beechcraftc.jpg' alt = Your Plane's Cockpit width = 450 />");
+                  $("#notes").html("Just don't fly it to an island with a Spinosaurus on it like Jurassic Park 3");
+              }
+              
+              //3 engine aircraft
+              
+              if((q3_response == "3 Engine" || q3_response == "4 Engine") && q4_response == "Propeller" && q5_response == "Fighter"){
+                  $("#results").html("Unfortunately, there are no planes that meet this criteria");
+                  $("#picture1").html("<img src = 'img/noplane.png' alt = Your Plane width = 450 />");
+                  $("#picture2").html("");
+                  $("#notes").html("");
+              }
+              
+              if(q3_response == "3 Engine" && q4_response == "Propeller" && (q5_response == "Cargo" || q5_response == "Private" || q5_response == "Commercial")){
+                  $("#results").html("Today you'll be going up in the: JU-52");
+                  $("#picture1").html("<img src = 'img/ju52.jpg' alt = Your Plane width = 450 />");
+                  $("#picture2").html("<img src = 'img/ju52c.jpg' alt = Your Plane's Cockpit width = 450 />");
+                  $("#notes").html("It may look like a school bus that had some wings and propellers bolted onto it. That's because it probably is.");
+              }
+              
+              //4 engine aircraft
+              
+              
+              
+              if(q3_response == "4 Engine" && q4_response == "Propeller" && q5_response == "Cargo"){
+                  $("#results").html("Today you'll be going up in the: C-130 Hercules");
+                  $("#picture1").html("<img src = 'img/c130.jpg' alt = 'Your Plane' width = 450 />");
+                  $("#picture2").html("<img src = 'img/c130c.jpg' alt = 'Your Plane's Cockpit' width = 450 />");
+                  $("#notes").html("");
+              }
+            
+                if(q3_response == "4 Engine" && q4_response == "Propeller" && q5_response == "Commercial"){
+                  $("#results").html("Today you'll be going up in the: Douglas DC-4");
+                  $("#picture1").html("<img src = 'img/dc4.jpg' alt = 'Your Plane' width = 450 />");
+                  $("#picture2").html("<img src = 'img/dc4c.jpg' alt = 'Your Plane's Cockpit' width = 450 />");
+                  $("#notes").html("Don't worry about those rust spots, you'll forget about them once you get in the air.");
+              } 
+              
+              if(q3_response == "4 Engine" && q4_response == "Propeller" && q5_response == "Private"){
+                  $("#results").html("Unfortunately, there are no planes that meet this criteria");
+                  $("#picture1").html("<img src = 'img/noplane.png' alt = Your Plane width = 450 />");
+                  $("#picture2").html("");
+                  $("#notes").html("");
+              } 
+            
+            //jets
+            
+             if(q3_response == "Single Engine" && q4_response == "Jet" && q5_response == "Fighter"){
+                  $("#results").html("Today you'll be going up in the: F-86 Sabre");
+                  $("#picture1").html("<img src = 'img/f86.jpg' alt = 'Your Plane' width = 450 />");
+                  $("#picture2").html("<img src = 'img/f86c.jpg' alt = 'Your Plane's Cockpit' width = 450 />");
+                  $("#notes").html("");
+              }
+              
+              if(q3_response == "Single Engine" && q4_response == "Jet" && q5_response == "Cargo"){
+                  $("#results").html("Unfortunately, there are no planes that meet this criteria");
+                  $("#picture1").html("<img src = 'img/noplane.png' alt = Your Plane width = 450 />");
+                  $("#picture2").html("");
+                  $("#notes").html("");
+              }
+            
+            if(q3_response == "Single Engine" && q4_response == "Jet" && (q5_response == "Commercial" || q5_response == "Private")){
+                  $("#results").html("Today you'll be going up in the: Cirrus Max SF50");
+                  $("#picture1").html("<img src = 'img/cirrus.jpg' alt = 'Your Plane' width = 450 />");
+                  $("#picture2").html("<img src = 'img/cirrusc.jpg' alt = 'Your Plane's Cockpit' width = 450 />");
+                  $("#notes").html("Looks like a flying bathtub, but it doesn't come with one.");
+              }
+              
+              //2 engine jets
+              
+              if(q3_response == "2 Engine" && q4_response == "Jet" && q5_response == "Fighter"){
+                  $("#results").html("Today you'll be going up in the: F-15 Eagle");
+                  $("#picture1").html("<img src = 'img/f15.jpg' alt = 'Your Plane' width = 450 />");
+                  $("#picture2").html("<img src = 'img/f15c.jpg' alt = 'Your Plane's Cockpit' width = 450 />");
+                  $("#notes").html("We're not actually sure if this is legal or not");
+              }
+              
+              if(q3_response == "2 Engine" && q4_response == "Jet" && q5_response == "Cargo"){
+                  $("#results").html("Today you'll be going up in the: Boeing 777");
+                  $("#picture1").html("<img src = 'img/777.jpg' alt = 'Your Plane' width = 450 />");
+                  $("#picture2").html("<img src = 'img/777c.jpg' alt = 'Your Plane's Cockpit' width = 450 />");
+                  $("#notes").html("For when you need to transport 223,000lbs of your favorite foreign exotic snack back to your house");
+              }
+              
+              if(q3_response == "2 Engine" && q4_response == "Jet" && q5_response == "Commercial"){
+                  $("#results").html("Today you'll be going up in the: Boeing 787 Dreamliner");
+                  $("#picture1").html("<img src = 'img/787.jpg' alt = 'Your Plane' width = 450 />");
+                  $("#picture2").html("<img src = 'img/787c.jpg' alt = 'Your Plane's Cockpit' width = 450 />");
+                  $("#notes").html("Because the 787 is way cooler than the 737");
+              }
+              
+              if(q3_response == "2 Engine" && q4_response == "Jet" && q5_response == "Private"){
+                  $("#results").html("Today you'll be going up in the: Learjet 60");
+                  $("#picture1").html("<img src = 'img/learjet.jpg' alt = 'Your Plane' width = 450 />");
+                  $("#picture2").html("<img src = 'img/learjetc.jpg' alt = 'Your Plane's Cockpit' width = 450 />");
+                  $("#notes").html("A taste of true luxury. But that's only for passengers, which you are not.");
+              }
+              
+              //3 Engine jets
+              
+              if(q3_response == "3 Engine" && q4_response == "Jet" && (q5_response == "Fighter" || q5_response == "Private")){
+                  $("#results").html("Unfortunately, there are no planes that meet this criteria");
+                  $("#picture1").html("<img src = 'img/noplane.png' alt = Your Plane width = 450 />");
+                  $("#picture2").html("");
+                  $("#notes").html("");
+              }
+              
+              if(q3_response == "3 Engine" && q4_response == "Jet" && (q5_response == "Commercial" || q5_response == "Cargo")){
+                  $("#results").html("Today you'll be going up in the: Douglas DC-10");
+                  $("#picture1").html("<img src = 'img/dc10.jpg' alt = 'Your Plane' width = 450 />");
+                  $("#picture2").html("<img src = 'img/dc10c.jpg' alt = 'Your Plane's Cockpit' width = 450 />");
+                  $("#notes").html("Great for both cargo and commercial purposes once you ignore the fact that they sometimes explode");
+              }
+              
+              //4 Engine Jets
+              
+              if(q3_response == "4 Engine" && q4_response == "Jet" && (q5_response == "Private" || q5_response == "Fighter")){
+                  $("#results").html("Unfortunately, there are no planes that meet this criteria");
+                  $("#picture1").html("<img src = 'img/noplane.png' alt = Your Plane width = 450 />");
+                  $("#picture2").html("");
+                  $("#notes").html("");
+              }
+              
+              if(q3_response == "4 Engine" && q4_response == "Jet" && (q5_response == "Commercial" || q5_response == "Cargo")){
+                  $("#results").html("Today you'll be going up in the: Boeing 747");
+                  $("#picture1").html("<img src = 'img/747.jpg' alt = Your Plane width = 450 />");
+                  $("#picture2").html("<img src = 'img/747c.jpg' alt = Your Plane width = 450 />");
+                  $("#notes").html("Roll out the red carpet, the queen of the skies has arrived!");
+              }
+              
+              //unlimited power
+              if($("#q3").val() == "Unlimited Power"){
+                  $("#results").html("Today you'll be going up in the: Flying Whale");
+                  $("#picture1").html("<img src = 'img/whale.jpg' alt = Your Plane width = 500 />");
+                  $("#notes").html("Please present your whaling permit before embarking the aircraft");
+                  $("#picture2").html(""); 
+              }
+              
+              if(q2_response == "No Sight"){
+                  $("#disclaimer").html("Disclaimer: As you've stated that your vision is impaired, you will be given a free helmet to ensure your safety for the small price of $9.99")
+              }
+              
+              
+            });
+        </script>
+        
+    </body>
+</html>

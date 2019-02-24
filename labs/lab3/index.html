@@ -2,17 +2,22 @@
 <html>
     <head>
         <title>US Geography Quiz</title>
-        <link rel = "stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <link rel = "stylesheet" href="css/styles.css">
     </head>
     <body>
+        <div class = "jumbotron">
         <h1 id = "title">US Geography Quiz</h1>
-        <h2>What is the Capital of California?</h2>
+        </div>
+        <h2><span id = "markImg1"></span>What is the Capital of California?</h2>
         <input id = "q1" type = "text">
         <div id = "q1_feedback"></div>
-        <h2>What is the longest river?</h2>
+        
+        <h2><span id = "markImg2"></span>What is the longest river?</h2>
         <select id = "q2">
-            <option>Select One</option>
+            <option value = "">Select One</option>
             <option>Mississippi</option>
             <option>Missouri</option>
             <option>Colorado</option>
@@ -20,46 +25,55 @@
         </select>
         <div id = "q2_feedback"></div>
         
-        <h2>What is the smallest US State?</h2>
+        <h2><span id = "markImg3"></span>What is the smallest US State?</h2>
         <input type = "radio" name = "q3" id = "maine" value = "Maine"><label for="maine">Maine</label>
         <input type = "radio" name = "q3" id = "ri" value = "Rhode Island"><label for="ri">Rhode Island</label>
         <input type = "radio" name = "q3" id = "maryland" value = "Maryland"><label for="maryland">Maryland</label>
         <input type = "radio" name = "q3" id = "delaware" value = "Delaware"><label for = "delaware">Delaware</label>
         <div id = "q3_feedback"></div>
         
-        <h2>What Presidents are carved into Mount Rushmore?</h2>
+        <h2><span id = "markImg4"></span>What Presidents are carved into Mount Rushmore?</h2>
         <input type = "checkbox" id = "Jackson"><label for = "Jackson">A. Jackson</label>
         <input type = "checkbox" id = "Franklin"><label for = "Franklin">B. Franklin</label>
         <input type = "checkbox" id = "Jefferson"><label for = "Jefferson">T. Jefferson</label>
         <input type = "checkbox" id = "Roosevelt"><label for = "Roosevelt">T. Roosevelt</label>
         <div id = "q4_feedback"></div>
         
-        <h2>What image is in the great Seal of the State of California?</h2>
+        <h2><span id = "markImg5"></span>What image is in the great Seal of the State of California?</h2>
         <img src="img/seal1.png" alt = "Seal 1" class = "active" id = "seal1">
-        <img src="img/seal2.png" alt = "Seal 2"/ class = "active" id = "seal2">
+        <img src="img/seal2.png" alt = "Seal 2" class = "active" id = "seal2">
         <img src="img/seal3.png" alt = "Seal 3" class = "active" id = "seal3">
         <div id = "q5_feedback"></div>
         
+        <br>
+        <h2 id = "total"></h2>
+        
+        <button type = "button" class = "btn btn-primary" id = "submitButton"> Submit </button>
+        
         <br><br>
-        <h2 id = "total">
-            
-        </h2>
         
+        <h2 id = "congrats"></h2>
         
+        <h2 id = "totalTimes"></h2>
         
-        <button id = "submitButton"> Submit </button>
+        <h3 id = "previous"></h3>
         
-        <h2 id = "timesTaken"></h2>
+        <h3 id = "prevScores"></h3>
+        
+        <img src = "img/buddy_verified.png" width = 100 />
         
             
         <script>
+            /* global $ */
             let q1_value = 20;
             let q2_value = 20;
             let q3_value = 20;
             let q4_value = 20;
             let q5_value = 20;
+            let q5_response = "";
+            let q5_check = false;
             
-            let timesTaken = 0;
+            let totalTimes = localStorage.getItem("totalTimesTaken");
             
             let total_points = 0;
             
@@ -68,12 +82,20 @@
             let q3_answer = "Rhode Island";
             let q5_answer = "seal2";
             
+            let scoresArray = localStorage.getItem("scoreHistory");
+            if(scoresArray == null){
+                scoresArray = [];
+            }
+            else{
+                scoresArray = scoresArray.split(",");
+            }
+            
             
              $(".active").on("click", function(){
                  $(".active").css("background", "");
                  $(this).css("background", "yellow");
-                 
-                 let q5_response = $(this).attr("id");
+                 q5_response = $(this).attr("id");
+                 q5_check = true;
              });
              
              function isFormValid(){
@@ -81,68 +103,149 @@
                  
                  if($("#q1").val() == ""){
                      isValid = false;
-                     alert(isValid);
+                     
                  }
                  
+                 if($("#q2").val() == ""){
+                     isValid = false;
+                 }
                  
+                 if($("input[name=q3]:checked").val() == undefined){
+                     isValid = false;
+                 }
+                 
+                 if(!document.getElementById("Jackson").checked && !document.getElementById("Franklin").checked &&
+                 !document.getElementById("Jefferson").checked && !document.getElementById("Roosevelt").checked){
+                     isValid = false;
+                 }
+                 
+                 if(q5_check == false){
+                     isValid = false;
+                 }
                  
                  return isValid;
              }
             
+            //When the Submit Button is clicked
+            
             $("#submitButton").click(function(){
+                total_points = 0;
               // alert($("#q1").val());
               //alert($("input[name=q3]:checked").val());
+              
+            // alert($("#q5").attr("id"));
+              
               if(!isFormValid()){
                   return;
               }
-              
               let q1_response = $("#q1").val().toLowerCase();
               let q2_response = $("#q2").val();
               let q3_response = $("input[name=q3]:checked").val();
               //alert(q1_response == q1_answer);
+              
+              //QUESTION 1
               if(q1_response == q1_answer){
                   $("#q1_feedback").html("Correct!");
                   total_points += q1_value;
                   $("total").html(total_points);
+                  $("#markImg1").html("<img src = 'img/checkmark.png' alt = 'checkmark'>");
+                  $("#q1_feedback").attr("class","correct");
               }
               else{
                   $("#q1_feedback").html("Incorrect!");
+                  $("#markImg1").html("<img src = 'img/xmark.png' alt = 'xmark'>");
+                  $("#q1_feedback").attr("class","incorrect");
               }
+              
+              //QUESTION 2
               
               if(q2_response == q2_answer){
                   $("#q2_feedback").html("Correct!");
                   total_points += q2_value;
                   $("total").html(total_points);
+                  $("#markImg2").html("<img src = 'img/checkmark.png' alt = 'checkmark'>");
+                  $("#q2_feedback").attr("class","correct");
               }
               else{
                   $("#q2_feedback").html("Incorrect!");
+                  $("#markImg2").html("<img src = 'img/xmark.png' alt = 'xmark'>");
+                  $("#q2_feedback").attr("class","incorrect");
               }
+              
+              //QUESTION 3
+              
               if(q3_response == q3_answer){
                   $("#q3_feedback").html("Correct!");
                   total_points += q3_value;
+                  $("#markImg3").html("<img src = 'img/checkmark.png' alt = 'checkmark'>");
+                  $("#q3_feedback").attr("class","correct");
               }
               else{
                   $("#q3_feedback").html("Incorrect!");
+                  $("#markImg3").html("<img src = 'img/xmark.png' alt = 'xmark'>");
+                  $("#q3_feedback").attr("class","incorrect");
               }
+              
+              //QUESTION 4
               
               if(document.getElementById('Jefferson').checked && document.getElementById('Roosevelt').checked){
                   if(document.getElementById('Franklin').checked || document.getElementById('Jackson').checked){
                       $("#q4_feedback").html("Incorrect!");
+                      $("#markImg4").html("<img src = 'img/xmark.png' alt = 'xmark'>");
+                      $("#q4_feedback").attr("class","incorrect");
+                      
                   }
                   else{
                       $("#q4_feedback").html("Correct!");
                       total_points += q4_value;
+                      $("#markImg4").html("<img src = 'img/checkmark.png' alt = 'checkmark'>");
+                      $("#q4_feedback").attr("class","correct");
                   }
-                
               }
               else{
                   $("#q4_feedback").html("Incorrect!");
+                  $("#markImg4").html("<img src = 'img/xmark.png' alt = 'xmark'>");
+                  $("#q4_feedback").attr("class","incorrect");
               }
               
-              timesTaken++;
+              //QUESTION 5
+              
+              if(q5_response == q5_answer){
+                  $("#q5_feedback").html("Correct!");
+                  total_points += q5_value;
+                  $("#markImg5").html("<img src = 'img/checkmark.png' alt = 'checkmark'>");
+                  $("#q5_feedback").attr("class","correct");
+              }
+              else{
+                  $("#q5_feedback").html("Incorrect!");
+                  $("#markImg5").html("<img src = 'img/xmark.png' alt = 'xmark'>");
+                  $("#q5_feedback").attr("class","incorrect");
+              }
+              
+              if(total_points >= 100){
+                  $("#congrats").html("Congratulations! You got a perfect score!");
+              }
+              else{
+                  $("#congrats").html("");
+              }
+              
+              //increment times taken and update info at bottom of screen
+              
+              totalTimes++;
+              localStorage.setItem("totalTimesTaken", totalTimes);
               
               $("#total").html("The total score is: " + total_points);
-              $("#timesTaken").html("Times taken: " + timesTaken);
+              $("#totalTimes").html("Times taken: " + totalTimes);
+              
+              $("#previous").html("Previous Scores: ");
+              
+              
+              scoresArray.push(total_points);
+              scoresArray.forEach(function(score){
+                  $("#prevScores").append(score + " ");
+              });
+              
+              localStorage.setItem("scoreHistory", scoresArray);
             });
         </script>
         
