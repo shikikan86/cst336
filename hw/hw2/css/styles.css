@@ -6,6 +6,9 @@ body{
     
     background-color: #C5E6F8;
     text-align: center;
+    
+    font-family: "Caveat";
+    font-size: 1.2em;
 }
 
 #text{
@@ -38,4 +41,16 @@ hr{
     background-color: black;
     color: black;
     
+}
+
+#title{
+    font-family: "Permanent Marker";
+    font-size: 2.4em;
+    background-image:linear-gradient(90deg, lightgray, rgba(90,90,90));
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+#results, #notes{
+    font-size: 1.3em;
 }

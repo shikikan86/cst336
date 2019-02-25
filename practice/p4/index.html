@@ -1,0 +1,159 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+    
+    <h1> Spring Break Shopping </h1>
+
+    <table class = "table table-bordered">
+        <tr>
+            <th>Product</th>
+            <th>Unit <br> Price</th>
+            <th> Quantity </th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>Microfiber Beach Towel</td>
+            <td>$30</td>
+            <td><input id="towel" type="number" size="5"></td>
+            <td id="towelTotal"></td>
+        </tr>
+
+        <tr>
+            <td>Sunscreen 100SPF, 120ml</td>
+            <td>$10</td>
+            <td><input id="sunscreen" type="number" size="5"></td>
+            <td id="sunscreenTotal"></td>
+        </tr>
+
+        <tr>
+            <td>Ipanema Flip-flop Sandals </td>
+            <td>$20</td>
+            <td><input id="sandals" type="number" size="5"></td>
+            <td id="sandalsTotal"></td>
+        </tr>
+
+        <tr>
+            <td>Shipping</td>
+            <td></td>
+            <td></td>
+            <td id="shipping"></td>
+        </tr>
+
+        <tr>
+            <td>Subtotal</td>
+            <td></td>
+            <td></td>
+            <td id="subtotal"></td>
+        </tr>
+
+        <tr>
+            <td>Tax (10%)</td>
+            <td></td>
+            <td></td>
+            <td id="tax"></td>
+        </tr>
+
+        <tr>
+            <td>Total</td>
+            <td></td>
+            <td></td>
+            <td id="total"></td>
+        </tr>
+
+    </table>
+
+    <h3>Shipping & Handling <span id = "error"></span></h3>
+    <select id="shipping">
+        <option value="">Select one</option>
+        <option value="nextday">Next-Day< Delivery: $15.00</option>
+        <option value="threeday">Three-Day Delivery: $10.00</option>
+        <option value="regular">Regular(5-8 days): $5.00</option>
+    </select>
+    <br><br>
+
+    <span>I accept the terms of this purchase.</span>
+    <br>
+
+    <button id="submit">"CONFIRM PURCHASE"</button>
+
+    <script>
+        /*global $ */
+        $(document).ready(function() {
+            let subtowel = 0;
+            let subsunscreen = 0;
+            let subsandals = 0;
+            
+            
+            let total = 0;
+            let tax = 0;
+            let subtotal = 0;
+            let shipping = 0;
+            
+            function calcTots(){
+                total = 0;
+                subtotal = subtowel + subsunscreen + subsandals;
+                tax = subtotal * .1;
+                total = tax + subtotal;
+                
+                let shipping = $("#shipping").val();
+                
+                if(shipping == "Next-Day< Delivery: $15.00"){
+                    total += 15;
+                } else if(shipping == "Three-Day Delivery: $10.00"){
+                    total += 10;
+                } else if(shipping == "Regular(5-8 days): $5.00"){
+                    total += 5;
+                } else {
+                    total += 0;
+                }
+                
+                $("#subtotal").html("$" + subtotal);
+                $("#tax").html("$" + tax);
+                $("#total").html("$" + total);
+            }
+
+            $("#towel").on("change", function() {
+                subtowel = $("#towel").val() * 30;
+                $("#towelTotal").html("$" + subtowel);
+                calcTots();
+
+            });
+
+            $("#sunscreen").on("change", function() {
+                subsunscreen = $("#sunscreen").val() * 10;
+                $("#sunscreenTotal").html("$" + subsunscreen);
+                calcTots();
+            });
+
+            $("#sandals").on("change", function() {
+                subsandals = $("#sandals").val() * 20;
+                $("#sandalsTotal").html("$" + subsandals);
+                calcTots();
+            });
+            
+            $("#shipping").on("change", function() {
+                calcTots();
+            });
+
+            $("#submit").on("click", function() {
+                if($("#shipping").val() == "Select One"){
+                    $("#error").html("Please select a shipping method").style("color", "red").style("font-size", "20px");
+                }
+                else{
+                    $("#error").html("");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

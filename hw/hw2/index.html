@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>Homework 2</title>
-        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet"> 
         <link rel = "stylesheet" href="css/styles.css">
     </head>
     <body>
@@ -12,12 +14,11 @@
         
         <hr>
         
-        
         <div id = "text">
         <h2>Please enter your age: <input id = "q1" type = "number"></h2>
         
         <h2>Please describe your vision</h2>
-        <input type = "radio" name = "q2" id = "sight" value = "Sight"><label for="sight">I have 20/20 vision</label>
+        <input type = "radio" name = "q2" id = "sight" value = "Sight"><label for="sight">I can see into the future</label>
         <input type = "radio" name = "q2" id = "noSight" value = "No Sight"><label for="noSight">I'm completely blind</label>
         
         <h2>How many engines do you want on the aircraft?</h2>
@@ -30,7 +31,6 @@
             <option>Unlimited Power</option>
         </select>
 
-        
         <h2>How would you like the aircraft to be powered?</h2>
         <input type = "radio" name = "q4" id = "prop" value = "Propeller"><label for="prop">Propeller Engine</label>
         <input type = "radio" name = "q4" id = "jet" value = "Jet"><label for="jet">Jet Engine</label>
@@ -52,10 +52,9 @@
         
         <br>
         
-        <button id = "submitButton"> Let's Fly! </button>
+        <button type = "button" class = "btn btn-primary" id = "submitButton"> Let's Fly! </button>
         
         <br><br>
-        
         
         <div id = "results"></div>
         
@@ -80,7 +79,6 @@
                  
                  if($("#q1").val() == ""){
                      isValid = false;
-                     
                  }
                  
                  if($("input[name=q2]:checked").val() == undefined){
@@ -95,12 +93,12 @@
                      isValid = false;
                  }
                  
-                 
-                 
+                 if($("#q5").val() == ""){
+                     isValid = false;
+                 }
                  
                  return isValid;
              }
-             
              
              $("#q3").on("change", function(){
                  if($("#q3").val() == "Unlimited Power"){
@@ -111,7 +109,6 @@
                  }
              });
              
-            
             //When the Submit Button is clicked
             
             $("#submitButton").click(function(){
@@ -121,15 +118,12 @@
                 $("#notes").html("");
                 $("#disclaimer").html("");
                 
-                
               let q1_response = $("#q1").val();
               let q2_response = $("input[name=q2]:checked").val(); //Sight or No Sight
               let q3_response = $("#q3").val(); //same as what's written on the options
               let q4_response = $("input[name=q4]:checked").val(); //Propeller or Jet
               let q5_response = $("#q5").val(); //same as what's written on the options
               let q6_response = document.getElementById("certify").checked; //true or false
-              
-              
               
               if(q6_response){
                   $("#cmon").html("");
@@ -151,7 +145,6 @@
                   return;
               }
               
-             
               //Single Engine Private Prop
               if(q3_response == "Single Engine" && q4_response == "Propeller" && q5_response == "Private"){
                   $("#results").html("Today you'll be going up in the: Cessna 172");
@@ -222,8 +215,7 @@
               if((q3_response == "3 Engine" || q3_response == "4 Engine") && q4_response == "Propeller" && q5_response == "Fighter"){
                   $("#results").html("Unfortunately, there are no planes that meet this criteria");
                   $("#picture1").html("<img src = 'img/noplane.png' alt = Your Plane width = 450 />");
-                  $("#picture2").html("");
-                  $("#notes").html("");
+                  return;
               }
               
               if(q3_response == "3 Engine" && q4_response == "Propeller" && (q5_response == "Cargo" || q5_response == "Private" || q5_response == "Commercial")){
@@ -234,8 +226,6 @@
               }
               
               //4 engine aircraft
-              
-              
               
               if(q3_response == "4 Engine" && q4_response == "Propeller" && q5_response == "Cargo"){
                   $("#results").html("Today you'll be going up in the: C-130 Hercules");
@@ -254,8 +244,7 @@
               if(q3_response == "4 Engine" && q4_response == "Propeller" && q5_response == "Private"){
                   $("#results").html("Unfortunately, there are no planes that meet this criteria");
                   $("#picture1").html("<img src = 'img/noplane.png' alt = Your Plane width = 450 />");
-                  $("#picture2").html("");
-                  $("#notes").html("");
+                  return;
               } 
             
             //jets
@@ -270,8 +259,7 @@
               if(q3_response == "Single Engine" && q4_response == "Jet" && q5_response == "Cargo"){
                   $("#results").html("Unfortunately, there are no planes that meet this criteria");
                   $("#picture1").html("<img src = 'img/noplane.png' alt = Your Plane width = 450 />");
-                  $("#picture2").html("");
-                  $("#notes").html("");
+                  return;
               }
             
             if(q3_response == "Single Engine" && q4_response == "Jet" && (q5_response == "Commercial" || q5_response == "Private")){
@@ -316,8 +304,7 @@
               if(q3_response == "3 Engine" && q4_response == "Jet" && (q5_response == "Fighter" || q5_response == "Private")){
                   $("#results").html("Unfortunately, there are no planes that meet this criteria");
                   $("#picture1").html("<img src = 'img/noplane.png' alt = Your Plane width = 450 />");
-                  $("#picture2").html("");
-                  $("#notes").html("");
+                  return;
               }
               
               if(q3_response == "3 Engine" && q4_response == "Jet" && (q5_response == "Commercial" || q5_response == "Cargo")){
@@ -332,8 +319,7 @@
               if(q3_response == "4 Engine" && q4_response == "Jet" && (q5_response == "Private" || q5_response == "Fighter")){
                   $("#results").html("Unfortunately, there are no planes that meet this criteria");
                   $("#picture1").html("<img src = 'img/noplane.png' alt = Your Plane width = 450 />");
-                  $("#picture2").html("");
-                  $("#notes").html("");
+                  return;
               }
               
               if(q3_response == "4 Engine" && q4_response == "Jet" && (q5_response == "Commercial" || q5_response == "Cargo")){
@@ -352,12 +338,9 @@
               }
               
               if(q2_response == "No Sight"){
-                  $("#disclaimer").html("Disclaimer: As you've stated that your vision is impaired, you will be given a free helmet to ensure your safety for the small price of $9.99")
+                  $("#disclaimer").html("Disclaimer: As you've stated that your vision is impaired, you will be given a free helmet to ensure your safety for the small price of $9.99");
               }
-              
-              
             });
         </script>
-        
     </body>
 </html>
