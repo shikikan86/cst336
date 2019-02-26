@@ -15,10 +15,11 @@ body{
     background-color: #C5E6F8;
     margin-left: 28%;
     margin-right: 28%;
-    padding-bottom: 20px;
     padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 5px;
+    font-size: 1.0em;
 }
 
 
@@ -52,5 +53,6 @@ hr{
 }
 
 #results, #notes{
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
+
