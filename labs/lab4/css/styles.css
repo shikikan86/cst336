@@ -1,0 +1,32 @@
+.error{
+    color: red;
+}
+.correct{
+    color:green;
+}
+
+fieldset, h1{
+    text-align: center;
+}
+fieldset{
+    
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-style: solid;
+}
+h1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "Play";
+    
+    border-style: solid;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#text{
+    border-style: solid;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: lightblue;
+}
