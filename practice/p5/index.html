@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Practice 5: Like/Dislike Video App</title>
+  <link rel = "stylesheet" href = "css/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+  <!--Embed here any YouTube video using the "iframe" tag -->
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/emXKUzofpFw" allowfullscreen>
+</iframe>
+</div>
+<br>
+
+  <div class="row">
+      
+    <div class="col-8">  
+      <button id="getComments">
+        Get Comments
+      </button>
+    </div>
+    
+    <div class="col-4">
+      <button id="like">
+        <img src="img/like.png" alt="Like button" width="35" />
+      </button>
+      
+      <button id="dislike">
+        <img src="img/dislike.png" alt="Dislike button" width="35" />
+      </button>
+  </div>
+  
+  <!--The number of likes is displayed within the span below-->
+  <span id="likes"></span>
+  </div>
+
+</body>
+<script>
+  
+  function ajaxCall(action)
+  {
+    if(action == "like")
+    {
+      $("#likes").html("<img src=''https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'>")
+    }
+  }
+  
+  $.ajax({
+    type:"get",
+    url: "https://cst336.herokuapp.com/projects/api/videoLikesAPI.php",
+    dataType: "json",
+    data: {
+      "videoId": "sB2T0sQBUdw",
+      "action": action
+    },
+    
+    success:  function(data, status)
+    {
+      $("#likes").html(data.likes);
+      
+    }
+  })
+
+  //This AJAX call returns a number of "likes" and "dislikes"
+  //Enter a YouTube video id for "data".
+	$.ajax({
+            type: "get",
+            url:  "https://cst336.herokuapp.com/projects/api/videoLikesAPI.php",
+            dataType: "json",
+            data: { "videoId": "" },  //   <----AS THE VALUE, ENTER THE YOUTUBE VIDEO ID
+            
+            success: function(data,status) {
+                 $("div").html(data.likes);
+              },
+              complete: function(data,status) { 
+                  //alert(status);
+              }
+         });
+	
+</script>
+</html>
