@@ -73,7 +73,8 @@
                     data: { "length": "10" },
                     success: function(data, status) {
 
-                        alert("Recommended Password: " + data.suggestedPwd);
+                        //alert("Recommended Password: " + data.suggestedPwd);
+                        $("#rec").html("Recommended Password: " + data.suggestedPwd);
 
                     },
                     complete: function(data, status) { //optional, used for debugging purposes
@@ -134,7 +135,7 @@
         <span id="username1Error"></span> <br /><br> Username: <input type="text" id="username2" />
         <span id="username2Error" class="error"></span> <br />
         <br /> Password: <input type="password" id="password">
-        <span id = "passworderror" class = "error"></span><br /><br>
+        <span id = "passworderror" class = "error"></span><br /><span id = "rec"></span><br><br>
 
         <button type="button" class="btn btn-primary"> Sign up!</button>
         <br><br>
