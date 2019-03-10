@@ -1,9 +1,146 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Sign up</title>
-    </head>
-    <body>
 
-    </body>
+<head>
+    <link rel = "stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title> Sign Up - PHP Web API Version </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+        /*global $*/
+
+        $(document).ready(function() {
+            $("#username1").change(function() {
+                $.ajax({
+                    type: "GET",
+                    url: "api/checkUsername_text.php",
+                    data: { "username": $("#username1").val() },
+                    success: function(data, status) {
+                        
+                        if(data == "Not Available!"){
+                            $("#username1Error").attr("class", "error");
+                        }
+                        else{
+                            $("#username1Error").attr("class", "correct");
+                        }
+                        $("#username1Error").html(data);
+                    },
+                    complete: function(data, status) { //optional, used for debugging purposes
+                        //alert(status);
+                    }
+
+                }); //ajax
+            });
+
+            $("#username2").change(function() {
+                $.ajax({
+                    type: "GET",
+                    url: "api/checkUsername_json.php",
+                    dataType: "json",
+                    data: { "username": $("#username2").val() },
+                    success: function(data, status) {
+                        //alert(data);
+                        if (data.available) {
+                            $("#username2Error").html("Username is available!");
+                            $("#username2Error").attr("class", "correct");
+                        }
+                        else {
+                            $("#username2Error").html("Username is unavailable!");
+                            $("#username2Error").attr("class", "error")
+                        }
+                    },
+                    complete: function(data, status) { //optional, used for debugging purposes
+                        //alert(status);
+                    }
+
+                }); //ajax  
+            }); //username2 change
+
+
+            $("#password").on("click", function() {
+
+                //alert("hi");
+
+                $.ajax({
+
+                    type: "GET",
+                    url: "api/strongPwdAPI.php",
+                    dataType: "json",
+                    data: { "length": "10" },
+                    success: function(data, status) {
+
+                        alert("Recommended Password: " + data.suggestedPwd);
+
+                    },
+                    complete: function(data, status) { //optional, used for debugging purposes
+                        //alert(status);
+                    }
+
+                }); //ajax
+
+            }); //passwordClick 
+
+
+            $("#password").on("change", function() {
+
+                //alert("hi");
+
+                $.ajax({
+
+                    type: "GET",
+                    url: "api/validatePwd.php",
+                    dataType: "json",
+                    data: {
+                        "username": $("#username1").val(),
+                        "pwd": $("#password").val()
+                    },
+                    success: function(data, status) {
+
+                        //alert(data);
+                        if($("#password").val().includes($("#username1").val())){
+                            //alert($("#password").val());
+                            $("#passworderror").html("Password can not contain username");
+                        }
+                        else{
+                            $("#passworderror").html("");
+                        }
+                        
+
+                    },
+                    complete: function(data, status) { //optional, used for debugging purposes
+                        //alert(status);
+                    }
+
+                }); //ajax
+
+            }); //passwordClick                
+
+        }); //documentReady
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>
+            <br>
+            <h1>Sign Up</h1>
+        </legend>
+        <div>
+        First Name: <input type="text" id="firstName" name="firstName" /> <br /><br> Last Name: <input type="text" id="lastName" name="lastName" /> <br /><br> Username: <input type="text" id="username1" />
+        <span id="username1Error"></span> <br /><br> Username: <input type="text" id="username2" />
+        <span id="username2Error" class="error"></span> <br />
+        <br /> Password: <input type="password" id="password">
+        <span id = "passworderror" class = "error"></span><br /><br>
+
+        <button type="button" class="btn btn-primary"> Sign up!</button>
+        <br><br>
+        <img src = "img/buddy_verified.png" width="100">
+        </div>
+    </fieldset>
+</body>
+
 </html>
