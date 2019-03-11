@@ -1,0 +1,28 @@
+[11-Mar-2019 19:57:59 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php on line 9
+[11-Mar-2019 19:57:59 UTC] PHP Stack trace:
+[11-Mar-2019 19:57:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php:0
+[11-Mar-2019 19:57:59 UTC] PHP   2. array_push() /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php:9
+[11-Mar-2019 19:57:59 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php on line 15
+[11-Mar-2019 19:57:59 UTC] PHP Stack trace:
+[11-Mar-2019 19:57:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php:0
+[11-Mar-2019 19:57:59 UTC] PHP   2. array_push() /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php:15
+[11-Mar-2019 19:57:59 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php on line 21
+[11-Mar-2019 19:57:59 UTC] PHP Stack trace:
+[11-Mar-2019 19:57:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php:0
+[11-Mar-2019 19:57:59 UTC] PHP   2. array_push() /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php:21
+[11-Mar-2019 19:57:59 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php on line 27
+[11-Mar-2019 19:57:59 UTC] PHP Stack trace:
+[11-Mar-2019 19:57:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php:0
+[11-Mar-2019 19:57:59 UTC] PHP   2. array_push() /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php:27
+[11-Mar-2019 19:57:59 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php on line 34
+[11-Mar-2019 19:57:59 UTC] PHP Stack trace:
+[11-Mar-2019 19:57:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php:0
+[11-Mar-2019 19:57:59 UTC] PHP   2. array_push() /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php:34
+[11-Mar-2019 20:00:22 UTC] PHP Parse error:  syntax error, unexpected 'Beach' (T_STRING) in /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php on line 5
+[11-Mar-2019 20:00:23 UTC] PHP Parse error:  syntax error, unexpected 'Beach' (T_STRING) in /home/ubuntu/workspace/cst336/practice/p6/getRandomProduct.php on line 5
+[11-Mar-2019 20:11:49 UTC] PHP Parse error:  syntax error, unexpected '$codes' (T_VARIABLE) in /home/ubuntu/workspace/cst336/practice/p6/discounts.php on line 10
+[11-Mar-2019 20:12:25 UTC] PHP Parse error:  syntax error, unexpected '$codes' (T_VARIABLE) in /home/ubuntu/workspace/cst336/practice/p6/discounts.php on line 10
+[11-Mar-2019 20:13:17 UTC] PHP Parse error:  syntax error, unexpected '$codes' (T_VARIABLE) in /home/ubuntu/workspace/cst336/practice/p6/discounts.php on line 10
+[11-Mar-2019 20:13:21 UTC] PHP Parse error:  syntax error, unexpected '$codes' (T_VARIABLE) in /home/ubuntu/workspace/cst336/practice/p6/discounts.php on line 10
+[11-Mar-2019 20:14:37 UTC] PHP Parse error:  syntax error, unexpected '$codes' (T_VARIABLE) in /home/ubuntu/workspace/cst336/practice/p6/discounts.php on line 10
+[11-Mar-2019 20:15:07 UTC] PHP Parse error:  syntax error, unexpected '$codes' (T_VARIABLE) in /home/ubuntu/workspace/cst336/practice/p6/discounts.php on line 10

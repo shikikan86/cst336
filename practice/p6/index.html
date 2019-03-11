@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+    
+    <h1> Discount Shopping </h1>
+
+    <table class = "table table-bordered">
+        <tr>
+            <th>Product</th>
+            <th>Unit <br> Price</th>
+            <th> Quantity </th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td><span id = "product"></span></td>
+            <td id = "price"></td>
+            <td><span id = "qty"></span></td>
+            <td id="productTotal"></td>
+        </tr>
+
+        <tr>
+            <td>Discount</td>
+            <td><span id = "discountPromo"></span></td>
+            <td><span id = "discountPercent"></span></td>
+            <td><span id = "discountTotal"></span></td>
+        </tr>
+
+        <tr>
+            <td>Subtotal</td>
+            <td></td>
+            <td></td>
+            <td id="subtotal"></td>
+        </tr>
+
+        <tr>
+            <td>Tax (10%)</td>
+            <td></td>
+            <td></td>
+            <td id="tax"></td>
+        </tr>
+
+        <tr>
+            <td>Total</td>
+            <td></td>
+            <td></td>
+            <td id="total"></td>
+        </tr>
+
+    </table>
+
+    <br><br>
+
+    <button id="submit">"CONFIRM PURCHASE"</button>
+
+    <script>
+        /*global $ */
+        let discountTotal;
+        let percent;
+        let apples;
+        let quant;
+        let productTotal;
+        $(document).ready(function() {
+            $.ajax({
+                    type: "GET",
+                    url: "getRandomProduct.php",
+                    dataType: "json",
+                    data: {},
+                    success: function(data, status) {
+                        //alert(data.price);
+                        $("#product").html(data.product);
+                        $("#qty").html(data.qty);
+                        apples = data.price;
+                        $("#price").html("$" + data.price);
+                        quant = data.qty;
+
+                    },
+                    complete: function(data, status) { //optional, used for debugging purposes
+                        //alert(status);
+                    }
+                });
+                
+                $.ajax({
+                    type: "GET",
+                    url: "discounts.php",
+                    dataType: "json",
+                    data: {},
+                    success: function(data, status) {
+                        //alert(data.price);
+                        $("#discountPromo").html(data.promo);
+                        $("#discountPercent").html(data.discount + "%");
+                        percent = .01 * data.discount;
+                    },
+                    complete: function(data, status) { //optional, used for debugging purposes
+                        //alert(status);
+                    }
+                });
+            
+            let total = 0;
+            let tax = 0;
+            let subtotal = 0;
+            
+            function calcTots(){
+                productTotal = quant * apples;
+                discountTotal = percent * productTotal;
+                subtotal = productTotal - discountTotal;
+                total = 0;
+                
+                tax = subtotal * .1;
+                total = tax + subtotal;
+                
+                $("#subtotal").html("$" + subtotal);
+                $("#tax").html("$" + tax);
+                $("#total").html("$" + total);
+                $('#productTotal').html("$" + productTotal);
+                $("#discountTotal").html("$" + discountTotal);
+            }
+
+            $("#submit").on("click", function() {
+                //alert(apples);
+                calcTots();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
