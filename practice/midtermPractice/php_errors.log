@@ -1,0 +1,20 @@
+[23-Mar-2019 02:58:38 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'midterm_practice.om_product' doesn't exist' in /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getRandomProduct.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getRandomProduct.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getRandomProduct.php on line 16
+[23-Mar-2019 05:56:31 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1' in /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getCodes.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getCodes.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getCodes.php on line 16
+[23-Mar-2019 05:56:48 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1' in /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getCodes.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getCodes.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getCodes.php on line 16
+[23-Mar-2019 05:57:32 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1' in /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getCodes.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getCodes.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/practice/midtermPractice/api/getCodes.php on line 16

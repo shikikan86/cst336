@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Midterm Practice </title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script>
+        /* global $ */
+        let price;
+        let qty;
+        let subtotal;
+        let tax;
+        let total;
+        let discount;
+        let userGuess;
+        let exp;
+        let selectedProduct;
+        $(document).ready(function() {
+            $("#qty").attr("value", "1");
+            $.ajax({
+                type: "GET",
+                url: "api/getRandomProduct.php",
+                dataType: "json",
+                //data:{"productName": $("#product").val()},
+                success: function(data, status) {
+                    //$("#product").html(data.productName);
+                    //alert(data.productName);
+
+                    data.forEach(function(product) {
+                        $("#product").html("<a href='#' id = '" + product.productName + "'>" + product.productName + "</a>");
+                        price = product.productPrice;
+                        qty = $("#qty").val();
+                        subtotal = price * qty;
+                        tax = subtotal * .10;
+                        total = subtotal + tax;
+
+                        $("#price").html("$" + price);
+                        $("#subtotal").html("$" + subtotal);
+                        $("#tax").html("$" + tax);
+                        $("#total").html("$" + total);
+                    });
+                }
+
+            }); //ajax
+
+            $.ajax({
+                type: "GET",
+                url: "api/getProduct.php",
+                dataType: "json",
+                success: function(data, status) {
+                    data.forEach(function(key) {
+                        $("#products").append("<option value=" + key.productId + ">" + key.productName + "</option>");
+                    });
+                }
+            }); //ajax
+
+
+            $("#qty").on("change", function() {
+                qty = $("#qty").val();
+                subtotal = price * qty;
+                tax = subtotal * .10;
+                total = subtotal + tax;
+                $("#subtotal").html("$" + subtotal);
+                $("#tax").html("$" + tax);
+                $("#total").html("$" + total);
+            });
+
+            $("#guess").on("change", function() {
+                $.ajax({
+                    type: "GET",
+                    url: "api/getCodes.php",
+                    dataType: "json",
+                    //data: { "guess": $("[name=guess]").val() },
+                    success: function(data, status) {
+                        data.some(function(code) {
+                            //alert(code.promoCode);
+                            if ($("#guess").val() == code.promoCode) {
+                                discount = code.discount;
+                                exp = code.expirationDate;
+                                $("#expirationDate").html("This code expires " + exp + "!");
+                                $("#expirationDate").attr("class", "correct");
+                                $("#discount").html(discount + "%");
+                                discount /= 100;
+                                subtotal = price * qty;
+                                let discountPrice = discount * subtotal;
+                                subtotal = subtotal - discountPrice;
+                                tax = subtotal * .10;
+                                total = subtotal + tax;
+
+                                $("#discountPrice").html("$" + discountPrice);
+                                $("#subtotal").html("$" + subtotal);
+                                $("#tax").html("$" + tax);
+                                $("#total").html("$" + total);
+                                return true;
+                            }
+                            else {
+                                $("#expirationDate").html("Invalid code");
+                                $("#expirationDate").attr("class", "error");
+                                return false;
+                            }
+                        }); //function
+                    }
+                }); //ajax
+            }); //guess
+
+        }); //ready
+    </script>
+
+</head>
+
+<body>
+
+    <br><br>
+
+    <table class="table table-bordered">
+        <tr>
+            <td>Product</td>
+            <td>Unit Price</td>
+            <td>Quantity</td>
+            <td>Total</td>
+        </tr>
+
+        <tr>
+            <td name="product" id="product"></td>
+            <td id="price"></td>
+            <td><input type="number" id="qty"></td>
+            <td></td>
+
+        </tr>
+
+        <tr>
+            <td> <select id="products">
+                <option>Select One</option>
+            </select> </td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Discount</td>
+            <td></td>
+            <td id="discount"></td>
+            <td id="discountPrice"></td>
+        </tr>
+
+        <tr>
+            <td>Subtotal</td>
+            <td></td>
+            <td></td>
+            <td id="subtotal"></td>
+        </tr>
+
+        <tr>
+            <td>Tax (10%)</td>
+            <td></td>
+            <td></td>
+            <td id="tax"></td>
+        </tr>
+
+        <tr>
+            <td>Total</td>
+            <td></td>
+            <td></td>
+            <td id="total"></td>
+        </tr>
+    </table>
+
+    <center>
+        <br><br> Promo Code: <input type "text" id="guess" name="guess"><br><br>
+        <span id="expirationDate"></span>
+    </center>
+</body>
+
+</html>
