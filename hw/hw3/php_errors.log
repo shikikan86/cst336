@@ -1,0 +1,51 @@
+[24-Mar-2019 02:25:34 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[24-Mar-2019 02:25:34 UTC] PHP Stack trace:
+[24-Mar-2019 02:25:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[24-Mar-2019 02:26:01 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[24-Mar-2019 02:26:01 UTC] PHP Stack trace:
+[24-Mar-2019 02:26:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[24-Mar-2019 02:26:28 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[24-Mar-2019 02:26:28 UTC] PHP Stack trace:
+[24-Mar-2019 02:26:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[24-Mar-2019 02:28:06 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[24-Mar-2019 02:28:06 UTC] PHP Stack trace:
+[24-Mar-2019 02:28:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[24-Mar-2019 02:30:49 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[24-Mar-2019 02:30:49 UTC] PHP Stack trace:
+[24-Mar-2019 02:30:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:18:29 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:18:29 UTC] PHP Stack trace:
+[26-Mar-2019 02:18:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:18:45 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:18:45 UTC] PHP Stack trace:
+[26-Mar-2019 02:18:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:18:50 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:18:50 UTC] PHP Stack trace:
+[26-Mar-2019 02:18:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:19:35 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:19:35 UTC] PHP Stack trace:
+[26-Mar-2019 02:19:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:20:41 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:20:41 UTC] PHP Stack trace:
+[26-Mar-2019 02:20:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:21:11 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:21:11 UTC] PHP Stack trace:
+[26-Mar-2019 02:21:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:21:21 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:21:21 UTC] PHP Stack trace:
+[26-Mar-2019 02:21:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:21:23 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:21:23 UTC] PHP Stack trace:
+[26-Mar-2019 02:21:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:21:29 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:21:29 UTC] PHP Stack trace:
+[26-Mar-2019 02:21:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:21:53 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:21:53 UTC] PHP Stack trace:
+[26-Mar-2019 02:21:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:21:58 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:21:58 UTC] PHP Stack trace:
+[26-Mar-2019 02:21:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
+[26-Mar-2019 02:23:01 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php on line 2
+[26-Mar-2019 02:23:01 UTC] PHP Stack trace:
+[26-Mar-2019 02:23:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/hw/hw3/api/getPromoCodes.php:0
