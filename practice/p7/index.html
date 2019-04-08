@@ -16,9 +16,10 @@
         
         let wordLength;
         let wordId;
+        let text;
 
         function getWord() {
-
+        
             //Ajax call to get the word_id and its length from the database 
             $.ajax({
                 type: "GET",
@@ -26,6 +27,15 @@
                 dataType: "json",
                 data: {},
                 success: function(data, status) {
+                    var i;
+                    text.length = data.length;
+                    
+                    for(i = 0; i < data.length; i++)
+                    {
+                        text[i] = '_ ';
+                    }
+                    
+                    $("#blanks").html(text.join(''));
 
                     $("#wordId").val(data.word_id);
                     
