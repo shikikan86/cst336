@@ -1,0 +1,37 @@
+[10-Apr-2019 06:27:31 UTC] PHP Warning:  include(../../inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php on line 6
+[10-Apr-2019 06:27:31 UTC] PHP Stack trace:
+[10-Apr-2019 06:27:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php:0
+[10-Apr-2019 06:27:31 UTC] PHP Warning:  include(): Failed opening '../../inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php on line 6
+[10-Apr-2019 06:27:31 UTC] PHP Stack trace:
+[10-Apr-2019 06:27:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php:0
+[10-Apr-2019 06:27:31 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php on line 8
+[10-Apr-2019 06:27:31 UTC] PHP Stack trace:
+[10-Apr-2019 06:27:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php:0
+[10-Apr-2019 06:28:24 UTC] PHP Warning:  include(../../inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php on line 6
+[10-Apr-2019 06:28:24 UTC] PHP Stack trace:
+[10-Apr-2019 06:28:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php:0
+[10-Apr-2019 06:28:24 UTC] PHP Warning:  include(): Failed opening '../../inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php on line 6
+[10-Apr-2019 06:28:24 UTC] PHP Stack trace:
+[10-Apr-2019 06:28:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php:0
+[10-Apr-2019 06:28:24 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php on line 8
+[10-Apr-2019 06:28:24 UTC] PHP Stack trace:
+[10-Apr-2019 06:28:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/loginProcess.php:0
+[11-Apr-2019 00:31:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php:8
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php(8): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php on line 8
+[11-Apr-2019 00:32:32 UTC] PHP Warning:  include(../../inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php on line 3
+[11-Apr-2019 00:32:32 UTC] PHP Stack trace:
+[11-Apr-2019 00:32:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php:0
+[11-Apr-2019 00:32:32 UTC] PHP Warning:  include(): Failed opening '../../inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php on line 3
+[11-Apr-2019 00:32:32 UTC] PHP Stack trace:
+[11-Apr-2019 00:32:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php:0
+[11-Apr-2019 00:32:32 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php on line 4
+[11-Apr-2019 00:32:32 UTC] PHP Stack trace:
+[11-Apr-2019 00:32:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php:0
+[11-Apr-2019 00:32:42 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php:8
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php(8): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php on line 8
