@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,6 +23,10 @@
        </select>
        <br>
        <button id = "submitButton">Add Product</button>
+       
+       <br><br>
+       
+       <span id = "totalProducts"></span>
     </body>
     <script>
     /* global $ */
@@ -38,12 +50,10 @@
                     "productDescription": $("#productDescription").val(),
                     "productImage": $("#productImage").val(),
                     "productPrice" : $("#productPrice").val(),
-                    
+                    "catId" : $("#catId").val(),
                 },
                 success: function(data, status) {
-                    data.forEach(function(key) {
-                        $("#categories").append("<option value=" + key["catId"] + ">" + key["catName"] + "</option>");
-                    });
+                    $("#totalProducts").html("Total Products: " + data.totalproducts);
                 }
             }); //ajax 
             });

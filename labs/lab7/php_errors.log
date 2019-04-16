@@ -35,3 +35,24 @@ Stack trace:
 #0 /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php(8): PDOStatement->execute()
 #1 {main}
   thrown in /home/ubuntu/workspace/cst336/labs/lab7/api/delete.php on line 8
+[14-Apr-2019 05:37:37 UTC] PHP Warning:  include(../../inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336/labs/lab7/api/addProductAPI.php on line 6
+[14-Apr-2019 05:37:37 UTC] PHP Stack trace:
+[14-Apr-2019 05:37:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/addProductAPI.php:0
+[14-Apr-2019 05:37:37 UTC] PHP Warning:  include(): Failed opening '../../inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336/labs/lab7/api/addProductAPI.php on line 6
+[14-Apr-2019 05:37:37 UTC] PHP Stack trace:
+[14-Apr-2019 05:37:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab7/api/addProductAPI.php:0
+[14-Apr-2019 06:05:39 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'catID' cannot be null' in /home/ubuntu/workspace/cst336/labs/lab7/api/addProductAPI.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/labs/lab7/api/addProductAPI.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/labs/lab7/api/addProductAPI.php on line 20
+[15-Apr-2019 23:23:21 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'productName' cannot be null' in /home/ubuntu/workspace/cst336/labs/lab7/api/addProductAPI.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/labs/lab7/api/addProductAPI.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/labs/lab7/api/addProductAPI.php on line 20
+[16-Apr-2019 03:41:05 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in /home/ubuntu/workspace/cst336/labs/lab7/api/getProductInfo.php:12
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/labs/lab7/api/getProductInfo.php(12): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/labs/lab7/api/getProductInfo.php on line 12

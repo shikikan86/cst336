@@ -2,6 +2,10 @@
 
 session_start();
 
+if(!isset($_SESSION['adminName'])){
+    header('location: login.html');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +31,7 @@ session_start();
                     data.forEach(function(product) {
                         $("#products").append("<div class='row'>" +
                             "<div class='col1'>" + 
-                            "[<a href='update.php'> Update </a>]" +
+                            "[<a href='update.php?productId="+product.productId+"'> Update </a>]" +
                             "[<a href='delete.php'> Delete </a>]" +
                             product.productName + "</div>" +
                             "<div class='col2'>" + "$" + product.productPrice + "</div>" +
@@ -114,6 +118,10 @@ session_start();
         
         <form action="addProducts.php">
             <button>Add New Product</button>
+        </form>
+        
+        <form action="logout.php">
+            <button>Logout</button>
         </form>
 
     </body>

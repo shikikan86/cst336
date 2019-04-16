@@ -10,7 +10,11 @@ $conn = getDatabaseConnection("ottermart");
 $username = $_POST['username'];
 $password = sha1($_POST['password']);
 
-$sql = "SELECT * FROM om_admin WHERE username = '$username' AND password = '$password'";
+$sql = "SELECT * FROM om_admin WHERE username = :username AND password = :password";
+
+$namedParameters = array();
+$namedParameters['username'] = $username;
+$namedParameters['password'] = $password;
 
 $stmt = $conn -> prepare($sql);  //$connection MUST be previously initialized
 $stmt->execute($namedParameters);
