@@ -37,15 +37,16 @@ if(!isset($_SESSION['adminName'])){
                     data.forEach(function(product) {
                         $("#products").append("<div class='row'>" +
                             "<div class='col1'>" + 
-                            "[<a href='update.php?productId="+product.productId+"'> Update </a>]" +
+                            "[<a href='update.php?productId="+product.productId+"'> Update </a>]   " +
                             //"[<a href='delete.php?productId="+product.productId+"'> Delete </a>]" +
                             "<form action='delete.php' method='post' onsubmit='return confirmDelete()'>"+
                             "<input type='hidden' name='productId' value='"+ product.productId + "'>" +
                             "<button class=\"btn btn-outline-danger\">Delete</button></form>" +
                             
-                            product.productName + "</div>" +
+                            
+                            "<a target='productIframe' onclick='openModal()' href='productInfo.php?productId="+product.productId+"'> " + product.productName + "</a></div>"+
                             "<div class='col2'>" + "$" + product.productPrice + "</div>" +
-                            "</div>");
+                            "</div> <br>");
                     });
                 },
                 complete: function(data, status) { //optional, used for debugging purposes
