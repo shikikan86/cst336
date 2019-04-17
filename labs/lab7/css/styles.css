@@ -1,3 +1,13 @@
 #products{
     padding-left: 20px;
 }
+
+#login, #text{
+    text-align: center;
+}
+
+#text{
+    background-color: lightgray;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
