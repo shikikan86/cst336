@@ -1,0 +1,15 @@
+[17-Apr-2019 21:09:47 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in /home/ubuntu/workspace/cst336/labs/lab7/delete.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/labs/lab7/delete.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/labs/lab7/delete.php on line 16
+[17-Apr-2019 21:12:59 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in /home/ubuntu/workspace/cst336/labs/lab7/delete.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/labs/lab7/delete.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/labs/lab7/delete.php on line 16
+[17-Apr-2019 21:35:38 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in /home/ubuntu/workspace/cst336/labs/lab7/delete.php:16
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/labs/lab7/delete.php(16): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/labs/lab7/delete.php on line 16

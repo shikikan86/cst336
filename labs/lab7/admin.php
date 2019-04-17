@@ -20,6 +20,12 @@ if(!isset($_SESSION['adminName'])){
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script>
+        function confirmDelete(){
+                
+                return confirm("Are you sure you want to delete this product?");
+                
+            }
+    
         /* global $ */
         $(document).ready(function() {
 
@@ -32,7 +38,11 @@ if(!isset($_SESSION['adminName'])){
                         $("#products").append("<div class='row'>" +
                             "<div class='col1'>" + 
                             "[<a href='update.php?productId="+product.productId+"'> Update </a>]" +
-                            "[<a href='delete.php'> Delete </a>]" +
+                            //"[<a href='delete.php?productId="+product.productId+"'> Delete </a>]" +
+                            "<form action='delete.php' method='post' onsubmit='return confirmDelete()'>"+
+                            "<input type='hidden' name='productId' value='"+ product.productId + "'>" +
+                            "<button class=\"btn btn-outline-danger\">Delete</button></form>" +
+                            
                             product.productName + "</div>" +
                             "<div class='col2'>" + "$" + product.productPrice + "</div>" +
                             "</div>");
@@ -100,8 +110,10 @@ if(!isset($_SESSION['adminName'])){
         }
 
         .col1 {
-            width: 250px;
+            width: 350px;
         }
+        
+        form{display: inline-block;}
     </style>
     </head>
     <body>
@@ -112,17 +124,21 @@ if(!isset($_SESSION['adminName'])){
         
         <br><hr><br>
         
-        <div id = "products">
-            
-        </div>
-        
-        <form action="addProducts.php">
+                <form action="addProducts.php">
             <button>Add New Product</button>
         </form>
+        
         
         <form action="logout.php">
             <button>Logout</button>
         </form>
+        
+        <br><br>
+        
+        <div id = "products">
+            
+        </div>
+    
 
     </body>
 </html>
