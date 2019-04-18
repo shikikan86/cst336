@@ -21,11 +21,16 @@ $stmt->execute($namedParameters);
 $record = $stmt->fetch(PDO::FETCH_ASSOC); //use fetch for one record, fetchAll for multiple
 
 if (empty($record)){
-    echo "Username or Password are incorrect!";
+    //echo "Username or Password are incorrect!";
+    header('location: login.php');
+    $Color = "red";
+    $Text = "Username or password is incorrect!";
+    $_SESSION['error'] = '<div style="Color:'.$Color.'">'.$Text.'</div>' ;
 }
 else{
     //echo $record['firstName'] . " " . $record['lastName'];
     header('location: admin.php');
+    $_SESSION['error'] = "";
     
     $_SESSION['adminName'] = $record['firstName'] . " " . $record['lastName'];
 }
