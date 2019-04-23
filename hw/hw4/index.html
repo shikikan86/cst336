@@ -19,6 +19,7 @@
         }
     </style>
     <script>
+    //weather: Clouds, Clear, Haze, Mist, 
         function getWeather() {
 
             $.ajax({
@@ -27,7 +28,15 @@
                 dataType: "json",
                 data: { "search": $("#search").val() },
                 success: function(data, status) {
-                    alert(data);
+                    //alert(data.weather[0].main);
+                    $("#weather").html(data.weather[0].main);
+                    let celsius = data.main.temp - 273.15;
+                    let farenheight = (celsius * 1.8) + 32;
+                    farenheight = Math.round(farenheight);
+                    $("#temp").html(farenheight + "F");
+                    $("#humidity").html(data.main.humidity + "%");
+                    $("#wind").html(data.wind.speed + "m/s");
+                    $("#direction").html(data.wind.deg);
                 }
             }); //ajax 
 
@@ -48,7 +57,12 @@
     <button onclick="getWeather()"> Search </button>
     <br /><br />
 
-    <div id="images"></div>
+    Weather: <span id = "weather"></span> 
+    <br>Temperature: <span id = "temp"></span>
+    <br>Humidity: <span id = "humidity"></span>
+    <br>Wind: <span id = "wind"></span>
+    <br>Direction: <span id = "direction"></span>
+    
 
 </body>
 
