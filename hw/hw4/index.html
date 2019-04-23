@@ -19,7 +19,12 @@
         }
     </style>
     <script>
-    //weather: Clouds, Clear, Haze, Mist, 
+        let weather;
+        let temp;
+        let humidity;
+        let wind;
+        let direction;
+        //weather: Clouds, Clear, Haze, Mist, Rain
         function getWeather() {
 
             $.ajax({
@@ -29,24 +34,46 @@
                 data: { "search": $("#search").val() },
                 success: function(data, status) {
                     //alert(data.weather[0].main);
-                    $("#weather").html(data.weather[0].main);
                     let celsius = data.main.temp - 273.15;
                     let farenheight = (celsius * 1.8) + 32;
                     farenheight = Math.round(farenheight);
-                    $("#temp").html(farenheight + "F");
-                    $("#humidity").html(data.main.humidity + "%");
-                    $("#wind").html(data.wind.speed + "m/s");
-                    $("#direction").html(data.wind.deg);
+
+                    weather = data.weather[0].main;
+                    temp = farenheight;
+                    humidity = data.main.humidity;
+                    wind = data.wind.speed;
+                    direction = data.wind.deg;
+
+                    $("#weather").html(weather);
+                    $("#temp").html(temp + "F");
+                    $("#humidity").html(humidity + "%");
+                    $("#wind").html(wind + "m/s");
+                    $("#direction").html(direction);
+
+                    $.ajax({
+                        method: "GET",
+                        url: "api/addReport.php",
+                        dataType: "json",
+                        data: {
+                            "weather": weather,
+                            "temp": temp,
+                            "humidity": humidity,
+                            "wind": wind,
+                            "direction": direction,
+                        },
+                        success: function(data, status) {
+                            alert("hi");
+                        }
+                    }); //ajax 
+
+
                 }
             }); //ajax 
 
-        } //searchImage()
 
 
-        $(document).ready(function() {
 
-
-        }); //documentReady
+        } //getWeather()
     </script>
 </head>
 
@@ -54,15 +81,13 @@
 
     <h1> Open Weather Service </h1>
     Location: <input type="text" id="search" />
-    <button onclick="getWeather()"> Search </button>
-    <br /><br />
+    <button id="submit" onclick="getWeather()"> Search </button>
+    <br /><br /> Weather: <span id="weather"></span>
+    <br>Temperature: <span id="temp"></span>
+    <br>Humidity: <span id="humidity"></span>
+    <br>Wind: <span id="wind"></span>
+    <br>Direction: <span id="direction"></span>
 
-    Weather: <span id = "weather"></span> 
-    <br>Temperature: <span id = "temp"></span>
-    <br>Humidity: <span id = "humidity"></span>
-    <br>Wind: <span id = "wind"></span>
-    <br>Direction: <span id = "direction"></span>
-    
 
 </body>
 
