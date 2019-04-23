@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Homework 4 </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        img {
+            border-radius: 20px;
+            padding: 15px;
+        }
+
+        .favorite {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function getWeather() {
+
+            $.ajax({
+                method: "GET",
+                url: "api/weatherProxy.php",
+                dataType: "json",
+                data: { "search": $("#search").val() },
+                success: function(data, status) {
+                    alert(data);
+                }
+            }); //ajax 
+
+        } //searchImage()
+
+
+        $(document).ready(function() {
+
+
+        }); //documentReady
+    </script>
+</head>
+
+<body>
+
+    <h1> Open Weather Service </h1>
+    Location: <input type="text" id="search" />
+    <button onclick="getWeather()"> Search </button>
+    <br /><br />
+
+    <div id="images"></div>
+
+</body>
+
+</html>
