@@ -143,3 +143,13 @@ Stack trace:
 #0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
 #1 {main}
   thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:44:44 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:46:39 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20

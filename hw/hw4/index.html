@@ -4,6 +4,9 @@
 <head>
     <title> Homework 4 </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <style>
         body {
             text-align: center;
@@ -78,17 +81,17 @@
         $(document).ready(function() {
             $("#count").on("click", function() {
                 $.ajax({
-                        method: "GET",
-                        url: "api/getReport.php",
-                        dataType: "json",
-                        data: {
-                            
-                        },
-                        success: function(data, status) {
-                            //alert(data.totalreports);
-                            $("#displaycount").html("Total Reports: " + data.totalreports);
-                        }
-                    }); //ajax 
+                    method: "GET",
+                    url: "api/getReport.php",
+                    dataType: "json",
+                    data: {
+
+                    },
+                    success: function(data, status) {
+                        //alert(data.totalreports);
+                        $("#displaycount").html("Total Reports: " + data.totalreports);
+                    }
+                }); //ajax 
             });
         });
     </script>
@@ -103,7 +106,7 @@
     <br>Temperature: <span id="temp"></span>
     <br>Humidity: <span id="humidity"></span>
     <br>Wind: <span id="wind"></span>
-    <br>Direction: <span id="direction"></span><br>
+    <br>Direction: <span id="direction"></span><br><br>
 
 
     <button id="count">Get number of reports</button>
