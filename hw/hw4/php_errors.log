@@ -33,3 +33,113 @@ Stack trace:
 #0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(19): PDOStatement->fetch(2)
 #1 {main}
   thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 19
+[23-Apr-2019 20:58:51 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:19
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(19): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 19
+[23-Apr-2019 21:00:03 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:19
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(19): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 19
+[23-Apr-2019 21:00:04 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:19
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(19): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 19
+[23-Apr-2019 21:01:16 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:19
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(19): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 19
+[23-Apr-2019 21:02:41 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:19
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(19): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 19
+[23-Apr-2019 21:04:32 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:04:48 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:19:14 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'weather.om_product' doesn't exist' in /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php:8
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php(8): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php on line 8
+[23-Apr-2019 21:19:14 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:21:28 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'weather.om_product' doesn't exist' in /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php:8
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php(8): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php on line 8
+[23-Apr-2019 21:21:29 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:24:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:26:00 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:28:18 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'weather.om_product' doesn't exist' in /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php:8
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php(8): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php on line 8
+[23-Apr-2019 21:28:30 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:28:31 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'weather.om_product' doesn't exist' in /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php:8
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php(8): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php on line 8
+[23-Apr-2019 21:28:41 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:28:42 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'weather.om_product' doesn't exist' in /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php:8
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php(8): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/getReport.php on line 8
+[23-Apr-2019 21:32:22 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:32:59 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:34:48 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20
+[23-Apr-2019 21:35:39 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php:20
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php(20): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/hw/hw4/api/addReport.php on line 20

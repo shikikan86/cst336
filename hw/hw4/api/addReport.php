@@ -5,13 +5,14 @@
     
     $arr = array();
 
+    $arr[":location"] = $_GET["location"];
     $arr[":weather"] = $_GET["weather"];
     $arr[":temp"] = $_GET["temp"];
     $arr[":humidity"] = $_GET["humidity"];
     $arr[":wind"] = $_GET["wind"];
     $arr[":direction"] = $_GET["direction"];
     
-    $sql = "INSERT INTO weather_report ( `weather`, `temp`, `humidity`, `wind`, `direction` ) VALUES ( :weather, :temp, :humidity,
+    $sql = "INSERT INTO weather_report ( `location`, `weather`, `temp`, `humidity`, `wind`, `direction` ) VALUES ( :location, :weather, :temp, :humidity,
 :wind, :direction )";
 
     $stmt = $conn->prepare($sql);

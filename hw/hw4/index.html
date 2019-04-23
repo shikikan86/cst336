@@ -37,7 +37,7 @@
                     let celsius = data.main.temp - 273.15;
                     let farenheight = (celsius * 1.8) + 32;
                     farenheight = Math.round(farenheight);
-
+                    let location = data.name;
                     weather = data.weather[0].main;
                     temp = farenheight;
                     humidity = data.main.humidity;
@@ -55,6 +55,7 @@
                         url: "api/addReport.php",
                         dataType: "json",
                         data: {
+                            "location": location,
                             "weather": weather,
                             "temp": temp,
                             "humidity": humidity,
@@ -62,7 +63,7 @@
                             "direction": direction,
                         },
                         success: function(data, status) {
-                            alert("hi");
+
                         }
                     }); //ajax 
 
@@ -71,9 +72,25 @@
             }); //ajax 
 
 
-
-
         } //getWeather()
+
+
+        $(document).ready(function() {
+            $("#count").on("click", function() {
+                $.ajax({
+                        method: "GET",
+                        url: "api/getReport.php",
+                        dataType: "json",
+                        data: {
+                            
+                        },
+                        success: function(data, status) {
+                            //alert(data.totalreports);
+                            $("#displaycount").html("Total Reports: " + data.totalreports);
+                        }
+                    }); //ajax 
+            });
+        });
     </script>
 </head>
 
@@ -86,7 +103,11 @@
     <br>Temperature: <span id="temp"></span>
     <br>Humidity: <span id="humidity"></span>
     <br>Wind: <span id="wind"></span>
-    <br>Direction: <span id="direction"></span>
+    <br>Direction: <span id="direction"></span><br>
+
+
+    <button id="count">Get number of reports</button>
+    <br><br><span id="displaycount"></span>
 
 
 </body>
