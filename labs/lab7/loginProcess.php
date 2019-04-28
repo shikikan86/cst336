@@ -12,6 +12,7 @@ $password = sha1($_POST['password']);
 
 $sql = "SELECT * FROM om_admin WHERE username = :username AND password = :password";
 
+
 $namedParameters = array();
 $namedParameters['username'] = $username;
 $namedParameters['password'] = $password;
@@ -34,6 +35,7 @@ else{
     
     $_SESSION['adminName'] = $record['firstName'] . " " . $record['lastName'];
 }
+
 
 //print_r($record);
 
