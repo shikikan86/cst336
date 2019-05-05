@@ -13,3 +13,16 @@ Stack trace:
 #0 /home/ubuntu/workspace/cst336/labs/lab7/delete.php(16): PDOStatement->execute()
 #1 {main}
   thrown in /home/ubuntu/workspace/cst336/labs/lab7/delete.php on line 16
+[04-May-2019 02:32:46 UTC] PHP Fatal error:  Call to undefined function dbConnection() in /home/ubuntu/workspace/cst336/labs/lab9/index.php on line 63
+[04-May-2019 02:32:46 UTC] PHP Stack trace:
+[04-May-2019 02:32:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab9/index.php:0
+[04-May-2019 02:33:54 UTC] PHP Fatal error:  Call to undefined function dbConnection() in /home/ubuntu/workspace/cst336/labs/lab9/index.php on line 63
+[04-May-2019 02:33:54 UTC] PHP Stack trace:
+[04-May-2019 02:33:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab9/index.php:0
+[04-May-2019 02:34:18 UTC] PHP Fatal error:  Call to undefined function dbConnection() in /home/ubuntu/workspace/cst336/labs/lab9/index.php on line 63
+[04-May-2019 02:34:18 UTC] PHP Stack trace:
+[04-May-2019 02:34:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab9/index.php:0
+[04-May-2019 02:34:41 UTC] PHP Fatal error:  Call to undefined function dbConnection() in /home/ubuntu/workspace/cst336/labs/lab9/index.php on line 63
+[04-May-2019 02:34:41 UTC] PHP Stack trace:
+[04-May-2019 02:34:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab9/index.php:0
+[05-May-2019 02:18:38 UTC] PHP Parse error:  syntax error, unexpected '(', expecting variable (T_VARIABLE) or '$' in /home/ubuntu/workspace/cst336/labs/lab9/index.php on line 29
