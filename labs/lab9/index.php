@@ -29,7 +29,7 @@
         
         for ($i = 2; $i < count($images); $i++) {
             
-            echo "<a href = 'gallery/$images[$i]' width='500' ><img src = 'gallery/$images[$i]' width='50'></a>";
+            echo "<a href = 'gallery/$images[$i]' width='500' ><img src = 'gallery/$images[$i]' width='100'></a>";
             
         }//for
     
@@ -49,7 +49,7 @@
             
             img { padding: 10px; }
             
-            img:hover { width: 250px; }
+        
             
             h1{
                 padding:20px;
@@ -96,6 +96,9 @@
         //$conn = dbConnection();
         
         ?>
+        
+        <br><br>
+        <img src = "img/buddy_verified.png" width = "150">
         
         </center>
     </body>
