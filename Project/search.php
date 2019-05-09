@@ -322,8 +322,9 @@ if(!isset($_SESSION['userName'])){
                     },
                     
                     error: function(data, status) {
-                        alert("here comes something...");
-                        alert(data);
+                        //alert("here comes something...");
+                        $("#products").html("<center><font color='red'> No results found </font></center>");
+                        //alert(data);
                     },
                 }); // ajax
             } // specialSearch()

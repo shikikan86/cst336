@@ -31,4 +31,16 @@ echo $arr;
 $stmt = $conn->prepare($sql);
 $stmt->execute($arr);
 
+/*Update the Cart to match*/
+
+$sql = "UPDATE jy_cart
+        SET pPrice = :productPrice,
+        pName = :productName,
+        pDescription = :productDescription,
+        pImage = :productImage
+        WHERE jy_cart.pId = " . $_GET['productId'];
+
+$stmt = $conn->prepare($sql);
+$stmt->execute($arr);        
+
 ?>
